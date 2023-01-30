@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Welcome!";
+}
+<div class="content_portion">
+    <div class="header">
+        <p>Search hotels by (HotelName, HotelRating, or Availability,</p>
+        <p>Enter your query to see the latest prices and deals for our hotels.</p>
+    </div>
+
+    <div class="wrap">
+        <div class="search">
+          <input type="text" class="searchTerm" placeholder="What are you looking for?">
+          <button type="submit" class="searchButton" onclick="triggerRequest()">
+            🔎
+         </button>
+        </div>
+    </div>
+
+    <div class="grid_container">
+    </div>
+</div>

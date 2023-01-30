@@ -1,0 +1,133 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.header {
+    --s: 0.1em; /* the thickness of the line */
+    --c: #2c4bff; /* the color */
+    color: #0000;
+    padding-bottom: var(--s);
+    background: linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%, linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    transition: 0.5s;
+}
+
+.header:hover {
+    --_p: 100%
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+    width: 40%;
+    margin: 12px auto;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.searchButton:hover {
+    background: #81f0ff;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+}
+
+.parent_row {
+    padding: 12px;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    height: fit-content;
+}
+
+/**/
+.parent_row:hover > ul {
+    display: block;
+}
+
+.parent_row > ul {
+    display: none;
+    list-style: none;
+    padding-left: 3px;
+    line-height: 1.0cm;
+    margin-top: 10px;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+        transform: scaleY(1.1)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+.parent_row > .collapse {
+    content: "";
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-left: 25px;
+    margin-bottom: 2px;
+}
+
+/* Dotted border */
+hr.dotted {
+    border-top: 3px dotted #bbb;
+}
+
